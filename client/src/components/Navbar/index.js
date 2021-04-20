@@ -34,6 +34,7 @@ function Navbar() {
       </div>
     </nav>
 
+
     // ----CHANGED THIS TO WHAT'S ABOVE----
 
     // <nav class="navbar navbar-expand-lg navbar-light bg-light">
