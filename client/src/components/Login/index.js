@@ -54,6 +54,7 @@ function Login({user, changeUser}) {
         </button>
       </form>
     </div>
+    </>
   );
 }
 
