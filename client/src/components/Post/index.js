@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 
 function Post() {
+
   return (
     <div className="card">
       <div className="card-horizontal">
