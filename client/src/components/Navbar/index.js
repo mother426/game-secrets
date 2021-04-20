@@ -34,8 +34,9 @@ function Navbar() {
       </div>
     </nav>
 
+
     // ----CHANGED THIS TO WHAT'S ABOVE----
-    
+
     // <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
     //   {/* header/title link */}
@@ -45,7 +46,7 @@ function Navbar() {
     //   </button>
     //   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     //     <div class="navbar-nav">
-          
+
     //       {/* for navbar links */}
     //       <a className="nav-item nav-link active" href="/">Home <span className="sr-only">(current)</span></a>
     //       <a className="nav-item nav-link" href="/findsecrets">Find Secrets</a>

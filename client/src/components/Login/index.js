@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Redirect } from "react-router";
 import api from "../../utils/api";
+import './style.css'
 
 function Login({user, changeUser}) {
   const emailRef = useRef();
@@ -9,8 +10,8 @@ function Login({user, changeUser}) {
   const handleLogin = async (e) => {
     e.preventDefault();
     const data = {
-        email: emailRef.current.value,
-        password: passwordRef.current.value
+      email: emailRef.current.value,
+      password: passwordRef.current.value
     }
     const isLoggedIn = await api.login(data);
     console.log(isLoggedIn.data);
@@ -18,8 +19,10 @@ function Login({user, changeUser}) {
   };
 
   return (
+
     <>
     {user.email && <Redirect to='/'/>}
+    <div className="card login-card">
       <form onSubmit={handleLogin}>
         <h2>Login</h2>
         <div class="form-group">
@@ -46,17 +49,11 @@ function Login({user, changeUser}) {
             ref={passwordRef}
           />
         </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1">
-            Check me out
-          </label>
-        </div>
         <button type="submit" class="btn btn-primary">
           Submit
         </button>
       </form>
-    </>
+    </div>
   );
 }
 
