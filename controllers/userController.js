@@ -27,8 +27,10 @@ module.exports = {
         const user = await db.User.findOne({ email: req.body.email });
         console.log(user);
         user.comparePassword(req.body.password, (err, match) => {
+            const loggedInUser = req.body;
+            delete loggedInUser.password;
             if (err) return res.status(422).json(err);
-            return res.json(match);
+            return res.json(loggedInUser);
         });
     }
 }
