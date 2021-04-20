@@ -4,7 +4,7 @@ import Post from '../components/Post'
 function HomePage() {
     return (
         <>
-            <div className="home-title">
+            <div style={{ fontSize: 35, textAlign: 'center', marginTop: 30}} className="home-title">
                 Secrets Feed
             </div>
             <Post />
