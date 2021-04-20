@@ -10,5 +10,8 @@ router
     .route(":/id")
     .get(userController.findById)
     .delete(userController.remove);
+router
+    .route("/login")
+    .post(userController.login)
 
 module.exports = router;

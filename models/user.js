@@ -3,14 +3,13 @@ const Schema = mongoose.Schema;
 const bcrypt = require("bcrypt");
 const SALT_WORK_FACTOR = 10;
 
-
 const userSchema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, index: { unique: true } },
   password: { type: String, required: true },
 });
 
-userSchema.pre(save, function (next) {
+userSchema.pre("save", function (next) {
   var user = this;
 
   // only hash the password if it has been modified (or is new)
@@ -32,6 +31,7 @@ userSchema.pre(save, function (next) {
 });
 
 userSchema.methods.comparePassword = function (candidatePassword, cb) {
+  console.log('COMPARE')
   bcrypt.compare(candidatePassword, this.password, function (err, isMatch) {
     if (err) return cb(err);
     cb(null, isMatch);

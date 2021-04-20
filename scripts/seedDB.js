@@ -29,12 +29,14 @@ const userSeed = [
 ];
 
 db.User.remove({})
-  .then(() => db.Post.collection.insertMany(userSeed))
-  .then(data => {
-    console.log(data.result.n + " records inserted");
-    process.exit(0);
-  })
-  .catch(err => {
+  .then(async () => {
+    userSeed.forEach((user) => {
+      await db.User.create(user);
+    })
+    process.exit(0)
+    }
+  )
+  .catch((err) => {
     console.error(err);
     process.exit(1);
   });
