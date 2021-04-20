@@ -2,8 +2,9 @@ import React from 'react';
 
 function Login() {
     return (
-
+        <>
         <form>
+        <h2>Login</h2>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
@@ -19,7 +20,7 @@ function Login() {
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-
+        </>
     )
 }
 
