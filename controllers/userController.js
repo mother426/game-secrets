@@ -24,13 +24,18 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     login: async function(req, res) {
-        const user = await db.User.findOne({ email: req.body.email });
-        console.log(user);
-        user.comparePassword(req.body.password, (err, match) => {
-            const loggedInUser = req.body;
-            delete loggedInUser.password;
-            if (err) return res.status(422).json(err);
-            return res.json(loggedInUser);
-        });
+        try {
+            const user = await db.User.findOne({ email: req.body.email });
+            console.log(user);
+            user.comparePassword(req.body.password, (err, match) => {
+                const loggedInUser = req.body;
+                delete loggedInUser.password;
+                if (err) return res.status(422).json(err);
+                return res.json(loggedInUser);
+            });
+
+        } catch (err) {
+            res.sendStatus(500).json(err);
+        }
     }
 }
