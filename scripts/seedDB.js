@@ -30,12 +30,11 @@ const userSeed = [
 
 db.User.remove({})
   .then(async () => {
-    userSeed.forEach((user) => {
+    for (let user of userSeed) {
       await db.User.create(user);
-    })
-    process.exit(0)
     }
-  )
+    process.exit(0);
+  })
   .catch((err) => {
     console.error(err);
     process.exit(1);
