@@ -3,10 +3,10 @@ import Login from '../components/Login'
 import Signup from '../components/Signup'
 
 
-function LoginPage() {
+function LoginPage({user, changeUser}) {
     return (
         <>
-        <Login />
+        <Login user={user} changeUser={changeUser}/>
         <Signup />
         </>
     )

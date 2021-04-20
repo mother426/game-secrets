@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
+import { Redirect } from "react-router";
 import api from "../../utils/api";
 import './style.css'
 
-function Login() {
+function Login({user, changeUser}) {
   const emailRef = useRef();
   const passwordRef = useRef();
 
@@ -14,9 +15,13 @@ function Login() {
     }
     const isLoggedIn = await api.login(data);
     console.log(isLoggedIn.data);
+    changeUser(isLoggedIn.data);
   };
 
   return (
+
+    <>
+    {user.email && <Redirect to='/'/>}
     <div className="card login-card">
       <form onSubmit={handleLogin}>
         <h2>Login</h2>
