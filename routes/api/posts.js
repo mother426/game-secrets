@@ -10,5 +10,8 @@ router
     .route("/:id")
     .get(postsController.findById)
     .delete(postsController.remove);
+router
+    .route("/findsecrets")
+    .get(postsController.findByTitle);
 
 module.exports = router

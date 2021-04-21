@@ -1,4 +1,4 @@
-const db = require('../models/post');
+const db = require('../models');
 
 // make sure session is logged in with every api call
 module.exports = {
@@ -21,6 +21,11 @@ module.exports = {
     remove: function(req, res) {
         db.Post.findById({ _id: req.params.id })
             .then(postModel => postModel.remove())
+            .then(postModel => res.json(postModel))
+            .catch(err => res.status(422).json(err));
+    },
+    findByTitle: function(req, res) {
+        db.Post.find({title: req.body})
             .then(postModel => res.json(postModel))
             .catch(err => res.status(422).json(err));
     }

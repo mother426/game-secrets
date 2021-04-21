@@ -20,6 +20,7 @@ function App() {
     localStorage.setItem("user", JSON.stringify(userInfo));
     setUser(userInfo);
   };
+  
   return (
     <Router>
       <Navbar changeUser={changeUser}/>
