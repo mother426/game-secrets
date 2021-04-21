@@ -25,8 +25,12 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     findByTitle: function(req, res) {
-        db.Post.find({title: req.body})
-            .then(postModel => res.json(postModel))
+        console.log(req.body);
+        db.Post.find({title: req.body.title}).populate('user')
+            .then(postModel => {
+                console.log(postModel)
+                res.json(postModel)
+            })
             .catch(err => res.status(422).json(err));
     }
 }

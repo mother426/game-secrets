@@ -2,7 +2,9 @@ import axios from "axios";
 
 const api = {
     login: (data) => axios.post('/api/user/login', data),
-    logout: () => axios.post('/api/user/logout')
+    logout: () => axios.post('/api/user/logout'),
+    searchByTitle: (query) => axios.post('/api/posts/findsecrets', query)
+
 }
 
 export default api;
