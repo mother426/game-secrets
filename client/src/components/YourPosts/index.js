@@ -1,10 +1,14 @@
-import React from "react";
-import "./style.css";
+import React from 'react';
+import './style.css';
 
-function Post() {
-
+function YourPosts() {
   return (
-    <div className="card">
+    <>
+    <h4 className="your-secrets-title">
+      Your Secrets
+    </h4>
+
+    <div className="card post-card">
       <div className="card-horizontal">
         <div className="img-square-wrapper">
           <img
@@ -28,7 +32,8 @@ function Post() {
         <small className="text-muted">Last updated 3 mins ago</small>
       </div>
     </div>
-  );
+    </>
+  )
 }
 
-export default Post;
+export default YourPosts;
