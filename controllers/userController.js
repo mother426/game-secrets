@@ -32,7 +32,6 @@ module.exports = {
         const loggedInUser = req.body;
         delete loggedInUser.password;
         if (err) return res.status(422).json(err);
-
         return res.json(loggedInUser);
       });
     } catch (err) {
@@ -47,4 +46,17 @@ module.exports = {
       res.sendStatus(500).json(err);
     }
   },
+  signup: async function (req, res) {
+    try {
+      await db.User.create({
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password
+      });
+
+    } catch (err) {
+      res.sendStatus(500).json(err);
+    }
+  }
 };
+
