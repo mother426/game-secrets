@@ -1,4 +1,4 @@
-const db = require('../models/post');
+const db = require('../models');
 
 // make sure session is logged in with every api call
 module.exports = {
@@ -22,6 +22,15 @@ module.exports = {
         db.Post.findById({ _id: req.params.id })
             .then(postModel => postModel.remove())
             .then(postModel => res.json(postModel))
+            .catch(err => res.status(422).json(err));
+    },
+    findByTitle: function(req, res) {
+        console.log(req.body);
+        db.Post.find({title: req.body.title}).populate('user')
+            .then(postModel => {
+                console.log(postModel)
+                res.json(postModel)
+            })
             .catch(err => res.status(422).json(err));
     }
 }

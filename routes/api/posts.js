@@ -5,6 +5,9 @@ router
     .route("/")
     .get(postsController.findAll)
     .post(postsController.create);
+router
+    .route("/findsecrets")
+    .post(postsController.findByTitle);
 
 router
     .route("/:id")

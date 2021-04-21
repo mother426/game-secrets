@@ -6,6 +6,7 @@ const postSchema = new Schema({
   author: { type: String, required: true },
   body: String,
   date: { type: Date, default: Date.now },
+  user: { type: Schema.Types.ObjectId, ref: 'User'}
 });
 
 const Post = mongoose.model("Post", postSchema);
