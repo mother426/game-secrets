@@ -1,8 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import api from '../../utils/api';
 import './style.css';
 
-function Navbar() {
+function Navbar(props) {
+  const handleLogout = async (e) => {
+    e.preventDefault();
+    console.log("loggingout: ")
+    await api.logout();
+    console.log("removing from localstorage")
+    localStorage.removeItem('user');
+    console.log("setting user")
+    props.changeUser({});
+  }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
@@ -29,6 +40,7 @@ function Navbar() {
             >
               Profile
             </Link>
+            <a href="/logout" onClick={handleLogout}>Logout</a>
           </li>
         </ul>
       </div>
