@@ -1,9 +1,22 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const routes = require("./routes")
+
+const session = require("express-session");
+
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  saveUninitialized: true, 
+  resave: false, 
+  cookie: {
+    httpOnly: true,
+    maxAge: parseInt(process.env.SESSION_MAX_AGE)
+  }
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
