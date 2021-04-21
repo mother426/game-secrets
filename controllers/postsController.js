@@ -1,5 +1,6 @@
 const db = require('../models/post');
 
+// make sure session is logged in with every api call
 module.exports = {
     findAll: function(req, res) {
         db.Post.find(req.query)

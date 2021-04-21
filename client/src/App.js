@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/Home";
 import LoginPage from "./pages/Login";
@@ -10,12 +10,19 @@ import AuthRoute from "./components/AuthRoute";
 // pass the user object into the state for the entire app
 function App() {
   const [user, setUser] = useState({});
+  useEffect(() => {
+    const localUser = JSON.parse(localStorage.getItem("user"));
+    console.log("localUser: ", localUser)
+    if (localUser) setUser(localUser);
+  }, []);
+
   const changeUser = (userInfo) => {
+    localStorage.setItem("user", JSON.stringify(userInfo));
     setUser(userInfo);
   };
   return (
     <Router>
-      <Navbar />
+      <Navbar changeUser={changeUser}/>
       <Switch>
         {/* <Route exact path="/" component={HomePage} /> */}
         <Route exact path="/home" component={HomePage} />
