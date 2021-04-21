@@ -7,7 +7,7 @@ function LoginPage({user, changeUser}) {
     return (
         <>
         <Login user={user} changeUser={changeUser}/>
-        <Signup />
+        <Signup user={user} changeUser={changeUser}/>
         </>
     )
 }

@@ -33,10 +33,40 @@ module.exports = {
         delete loggedInUser.password;
         if (err) return res.status(422).json(err);
 
+
+        } catch (err) {
+            res.sendStatus(500).json(err);
+        }
+    },
+    // signup: async function(req, res) {
+    //     try {
+    //         const { name, email, password } = req.body;
+
+    //         db.Users.create({ name, email, password })
+    //         .then(user => res.json(user))
+            
+    //     }
+    //     catch(err) {
+    //         res.sendStatus(500).json(err);
+    //     }
+    // }
+    signup: async function(req, res) {
+        try {
+            await db.User.create({ 
+                name: req.body.name,
+                email: req.body.email,
+                password: req.body.password
+            });
+
+        } catch (err) {
+            res.sendStatus(500).json(err);
+        }
+
         return res.json(loggedInUser);
       });
     } catch (err) {
       res.sendStatus(500).json(err);
+
     }
   },
   logout: async function (req, res) {
