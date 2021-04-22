@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function SearchResults() {
+function SearchResults(props) {
 
   return (
     <div className="card">
@@ -10,14 +10,15 @@ function SearchResults() {
           <img/>
         </div>
         <div className="card-body">
-          <h4 className="card-title"></h4>
-          <h6>posted by: BestUs3r123</h6>
+          <h4 className="card-title">hardcode</h4>
+          <h6>hardcode</h6>
           <p className="card-text">
+          hardcode
           </p>
         </div>
       </div>
       <div className="card-footer">
-        <small className="text-muted"></small>
+        <small className="text-muted">hardcode</small>
       </div>
     </div>
   );
