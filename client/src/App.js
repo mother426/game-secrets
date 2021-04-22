@@ -7,6 +7,7 @@ import FindSecretsPage from "./pages/FindSecrets";
 import ProfilePage from './pages/Profile'
 import "./App.css";
 import AuthRoute from "./components/AuthRoute";
+import CreatePost from "./components/CreatePost";
 // pass the user object into the state for the entire app
 function App() {
   const [user, setUser] = useState({});
@@ -45,6 +46,12 @@ function App() {
           path="/profile"
           user={user}
           component={ProfilePage}
+        />
+        <AuthRoute
+          exact
+          path="/createpost"
+          user={user}
+          component={CreatePost}
         />
         <AuthRoute exact path="/" user={user} component={HomePage} />
       </Switch>
