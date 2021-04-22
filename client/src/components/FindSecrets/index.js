@@ -3,8 +3,9 @@ import api from "../../utils/api";
 import SearchResults from "../SearchResults";
 import "./style.css";
 
-function FindSecrets() {
+function FindSecrets(props) {
   const [form, setForm] = useState({});
+  const [searchResults, setSearchResults] = useState([]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -12,10 +13,14 @@ function FindSecrets() {
   };
 
   const handleSearch = async (e) => {
-    console.log(form.search);
     e.preventDefault();
-    const { data } = await api.searchByTitle({ title: form.search });
-    console.log(data);
+    try {
+      const { data } = await api.searchByTitle({ title: form.search });
+      console.log("data from server: ", data);
+      setSearchResults(data);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -44,7 +49,7 @@ function FindSecrets() {
         </div>
       </div>
 
-      <SearchResults data={form}/>
+      <SearchResults searchResults={searchResults}/>
     </>
   );
 }
