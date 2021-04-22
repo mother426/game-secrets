@@ -11,13 +11,13 @@ import AuthRoute from "./components/AuthRoute";
 function App() {
   const [user, setUser] = useState({});
   useEffect(() => {
-    const localUser = JSON.parse(localStorage.getItem("user"));
+    const localUser = JSON.parse(sessionStorage.getItem("user"));
     console.log("localUser: ", localUser)
     if (localUser) setUser(localUser);
   }, []);
 
   const changeUser = (userInfo) => {
-    localStorage.setItem("user", JSON.stringify(userInfo));
+    sessionStorage.setItem("user", JSON.stringify(userInfo));
     setUser(userInfo);
   };
   

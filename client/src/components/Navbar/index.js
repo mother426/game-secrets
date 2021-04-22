@@ -9,7 +9,7 @@ function Navbar(props) {
     console.log("loggingout: ")
     await api.logout();
     console.log("removing from localstorage")
-    localStorage.removeItem('user');
+    sessionStorage.clear();
     console.log("setting user")
     props.changeUser({});
   }
