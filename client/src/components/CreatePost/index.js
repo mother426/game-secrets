@@ -23,35 +23,36 @@ function CreatePost({ user, changeUser }) {
     console.log(data);
     await api.createPost(data);
   }
+  const redirectHandler = console.log("test");
   return (
     <div>
       <h1>Create Player Question</h1>
-      <form onSubmit={createPostHandler}>
+      <form onSubmit= {createPostHandler}>
         <div>
           <p>Post by:</p>
         <input disabled="disabled" ref={authorRef} value={localUser.name} />
         </div>
         <p>At:</p>
         <input disabled="disabled" ref={dateRef} value={currentDate} />
-        <div class="form-group">
+        <div className="form-group">
 
-          <label for="exampleInputEmail1">Title of post</label>
-          <input class="form-control" placeholder="Enter title here" ref={titleRef} />
+          <label htmlFor="exampleInputEmail1">Title of post</label>
+          <input className="form-control" placeholder="Enter title here" ref={titleRef} />
         </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Player Question:</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Pour your heart out!" ref={bodyRef}></textarea>
+        <div className="form-group">
+          <label htmlFor="exampleFormControlTextarea1">Player Question:</label>
+          <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Pour your heart out!" ref={bodyRef}></textarea>
         </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text">Upload</span>
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text">Upload</span>
           </div>
         </div>
-        <div class="custom-file">
-          <input type="file" class="custom-file-input" id="inputGroupFile01" />
-          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+        <div className="custom-file">
+          <input type="file" className="custom-file-input" id="inputGroupFile01" />
+          <label className="custom-file-label" htmlFor="inputGroupFile01">Choose file</label>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" className="btn btn-primary">Submit</button>
         </div>
 
       </form>

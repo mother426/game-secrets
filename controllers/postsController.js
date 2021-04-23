@@ -34,14 +34,19 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     createPost: async function (req, res) {
+        console.log("here")
         try {
-            await db.Post.create({
+            const newPost = await db.Post.create({
                 title: req.body.title,
                 body: req.body.body,
                 author: req.body.author,
                 date: req.body.date
             })
+            console.log(newPost._id, req.session.user_id);
+            db.User.findOneAndUpdate({_id: req.session.user_id }, {$push:{posts: newPost._id}}, {new: true})
+            .then(() => res.sendStatus(200));
         } catch (err) {
+            console.log(err, "this is an error");
             res.sendStatus(500).json(err);
           }
     }
