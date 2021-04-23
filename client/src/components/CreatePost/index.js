@@ -21,8 +21,7 @@ function CreatePost({ user, changeUser }) {
       date: dateRef.current.value,
     }
     console.log(data);
-    const sendPost = await api.createPost(data);
-    changeUser(sendPost.data);
+    await api.createPost(data);
   }
   return (
     <div>
