@@ -4,7 +4,7 @@ import SearchResults from "../SearchResults";
 import "./style.css";
 
 function FindSecrets(props) {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({search: ""});
   const [searchResults, setSearchResults] = useState([]);
 
   const handleChange = (e) => {
@@ -25,7 +25,7 @@ function FindSecrets(props) {
 
   return (
     <>
-      <div class="search-area">
+      <div className="search-area">
         <h4 className="search-title">Search Game by Title to find Secrets</h4>
         <div className="row justify-content-center">
           <form className="form-inline">

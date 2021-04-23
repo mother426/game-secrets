@@ -4,7 +4,7 @@ const postsController = require("../../controllers/postsController");
 router 
     .route("/")
     .get(postsController.findAll)
-    .post(postsController.create);
+    .post(postsController.createPost);
 router
     .route("/findsecrets")
     .post(postsController.findByTitle);

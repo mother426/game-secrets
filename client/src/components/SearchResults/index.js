@@ -6,7 +6,7 @@ function SearchResults(props) {
   return (
     <>
     {props.searchResults.map((post) => (
-    <div className="card">
+    <div key={post._id} className="card">
       <div className="card-horizontal">
         <div className="img-square-wrapper">
           <img/>
@@ -20,7 +20,7 @@ function SearchResults(props) {
         </div>
       </div>
       <div className="card-footer">
-        <small className="text-muted">posted by: {post.user.name} at {post.date}</small>
+        <small className="text-muted">posted by: {post.author} at {post.date}</small>
       </div>
     </div>
     ))}

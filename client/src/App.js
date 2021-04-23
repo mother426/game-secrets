@@ -22,10 +22,10 @@ function App() {
     sessionStorage.setItem("user", JSON.stringify(userInfo));
     setUser(userInfo);
   };
-  const setPost = (userInfo) => {
-    sessionStorage.setItem("posts", JSON.stringify(userInfo));
-    setUser(userInfo)
-  }
+  // const setPost = (userInfo) => {
+  //   sessionStorage.setItem("posts", JSON.stringify(userInfo));
+  //   setUser(userInfo)
+  // }
 
   return (
     <Router>

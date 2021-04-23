@@ -30,6 +30,7 @@ module.exports = {
       console.log(req.session.cookie);
       user.comparePassword(req.body.password, (err, match) => {
         const userData = JSON.parse(JSON.stringify(user));
+        req.session.user_id = userData._id
         const loggedInUser = {...userData};
         delete loggedInUser.password;
         if (err) return res.status(422).json(err);
