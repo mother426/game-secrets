@@ -7,7 +7,7 @@ import FindSecretsPage from "./pages/FindSecrets";
 import ProfilePage from "./pages/Profile";
 import "./App.css";
 import AuthRoute from "./components/AuthRoute";
-import CreatePost from "./components/CreatePost";
+import CreatePost from "./pages/CreatePost";
 // pass the user object into the state for the entire app
 function App() {
   const [user, setUser] = useState({});
@@ -22,6 +22,7 @@ function App() {
     sessionStorage.setItem("user", JSON.stringify(userInfo));
     setUser(userInfo);
   };
+  // const setPost = (userInfo) =>
 
   return (
     <Router>
@@ -43,6 +44,7 @@ function App() {
           component={FindSecretsPage}
         />
         <AuthRoute exact path="/profile" user={user} component={ProfilePage} />
+        <AuthRoute exact path="/createpost" user={user} component={CreatePost} />
         <AuthRoute exact path="/" user={user} component={HomePage} />
       </Switch>
     </Router>

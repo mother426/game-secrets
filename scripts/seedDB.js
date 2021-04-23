@@ -26,30 +26,29 @@ const userSeed = [
     email: "taylor@email.com",
     password: "rootroot",
   },
-];
-
+]
 const postSeed = [
   {
     title: "post seed 1",
-    author: "seed user 1",
+    author: "John",
     body: "sdfdsfdsfsdfsdfsdfdsfsdfsdf",
     date: "2021-05-02",
   },
   {
     title: "post seed 2",
-    author: "seed user 2",
+    author: "Brandon",
     body: "aertiuhsadjklfkoajsdfo",
     date: "1994-07-01",
   },
   {
     title: "post seed 3",
-    author: "seed user 3",
+    author: "Dylan",
     body: "aertiuhsadjklfkoajsdfo",
     date: "2001-06-04",
   },
   {
     title: "post seed 4",
-    author: "seed user 3",
+    author: "Taylor",
     body: "aertiuhsadjklfkoajsdfo",
     date: "2012-01-01",
   },
