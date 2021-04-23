@@ -25,8 +25,10 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     findByTitle: function(req, res) {
+        //only matches EXACT title, use regex to match a LIKE query string and return results
+        //{'$regex' : '', '$options' : 'i'}
         console.log(req.body);
-        db.Post.find({title: req.body.title}).populate('user')
+        db.Post.find({title: {'$regex' : `${req.body.title}`, '$options' : 'i'}}).populate('user')
             .then(postModel => {
                 console.log(postModel)
                 res.json(postModel)
