@@ -22,7 +22,10 @@ function App() {
     sessionStorage.setItem("user", JSON.stringify(userInfo));
     setUser(userInfo);
   };
-  // const setPost = (userInfo) =>
+  const setPost = (userInfo) => {
+    sessionStorage.setItem("posts", JSON.stringify(userInfo));
+    setUser(userInfo)
+  }
 
   return (
     <Router>
@@ -44,7 +47,7 @@ function App() {
           component={FindSecretsPage}
         />
         <AuthRoute exact path="/profile" user={user} component={ProfilePage} />
-        <AuthRoute exact path="/createpost" user={user} component={CreatePost} />
+        <AuthRoute exact path="/createpost" user={user} component={CreatePost} changeUser={changeUser}/>
         <AuthRoute exact path="/" user={user} component={HomePage} />
       </Switch>
     </Router>
