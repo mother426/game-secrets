@@ -7,7 +7,8 @@ const api = {
     // searchYourPosts: (id) => axios.post('api/posts/' + id),
     signup: (data) => axios.post('api/user', data),
     createPost: (data) => axios.post('api/posts', data),
-    deletePost: (id) => axios.delete('/api/posts/' + id)
+    deletePost: (id) => axios.delete('/api/posts/' + id),
+    getPosts: () => axios.get('/api/posts')
 }
 
 export default api;
