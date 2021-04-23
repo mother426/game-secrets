@@ -1,40 +1,39 @@
-import React from "react";
-import { ListItem, List } from "../List";
-import { Link } from "react-router-dom";
-import API from "../../routes/API";
+import React, { useEffect, useState } from "react";
+import api from "../../utils/api";
 
 function PostsList() {
-  const [state, dispatch] = useStoreContext();
+    const [posts, setPosts] = useState([]);
 
-  const getPosts = () => {
-    dispatch({ type: LOADING });
-    API.getPosts()
-      .then(results => {
-        dispatch({
-          type: UPDATE_POSTS,
-          posts: results.data
-        });
-      })
-      .catch(err => console.log(err));
-  };
+    useEffect(() => {
+        api.getPosts()
+            .then(results => {
+                setPosts(results.data);
+            })
+            .catch(err => console.log(err));
+    }, []);
 
-  return (
-    <div>
-      <h1>Player Feed</h1>
-      <h3 className="mb-5 mt-5">Click on a post to view</h3>
-      {state.posts.length ? (
-        <List>
-          {state.posts.map(post => (
-            <ListItem key={post.user}>
-              <Link to={"/posts/" + post.user}>
-                <strong>
-                  {post.title} by {post.author}
-                </strong>
-              </Link>
-          ))}
-        </List>
-    </div>
-  );
+    return (
+        <>
+            {posts.map(post => (
+                <div className="card">
+                    <div className="card-horizontal">
+                        <div className="img-square-wrapper">
+                        </div>
+                        <div className="card-body">
+                            <h4 className="card-title">{post.title}</h4>
+                            <h6>{post.author}</h6>
+                            <p className="card-text">
+                                {post.body}
+                            </p>
+                            <div className="card-footer">
+                                <small className="text-muted">{post.date}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </>
+    );
 }
 
 export default PostsList;

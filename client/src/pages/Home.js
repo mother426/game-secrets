@@ -1,5 +1,6 @@
 import React from 'react';
 import Post from '../components/Post'
+import PostsList from '../components/PostsList';
 
 function HomePage() {
     return (
@@ -8,6 +9,7 @@ function HomePage() {
                 Secrets Feed
             </h4>
             <Post />
+            <PostsList/>
         </>
     )
 }
