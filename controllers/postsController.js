@@ -4,7 +4,7 @@ const db = require('../models');
 module.exports = {
     findAll: function(req, res) {
         db.Post.find(req.query)
-            .sort({ date: -1 })
+            .sort({ date: 1 })
             .then(postModel => res.json(postModel))
             .catch(err => res.status(422).json(err));
     },
