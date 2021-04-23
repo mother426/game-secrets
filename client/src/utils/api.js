@@ -5,6 +5,8 @@ const api = {
     logout: () => axios.post('/api/user/logout'),
     searchByTitle: (query) => axios.post('/api/posts/findsecrets', query),
     signup: (data) => axios.post('api/user', data),
+    createPost: (data) => axios.post('api/posts', data),
+    deletePost: (id) => axios.delete('/api/posts/' + id)
 }
 
 export default api;

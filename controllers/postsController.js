@@ -32,5 +32,18 @@ module.exports = {
                 res.json(postModel)
             })
             .catch(err => res.status(422).json(err));
+    },
+    createPost: async function (req, res) {
+        try {
+            await db.Post.create({
+                title: req.body.title,
+                body: req.body.body,
+                author: req.body.author,
+                date: req.body.date
+            })
+        } catch (err) {
+            res.sendStatus(500).json(err);
+          }
     }
+    
 }

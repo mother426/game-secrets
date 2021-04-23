@@ -1,7 +1,20 @@
 import React from 'react';
+import api from '../../utils/api';
+import DeletePost from '../DeletePost';
 import './style.css';
 
-function YourPosts() {
+function YourPosts(props) {
+
+  const handleDelete = async (id) => {
+    try {
+      console.log(id);
+      const post = await api.deletePost(id);
+      console.log(post)
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <>
     <h4 className="your-secrets-title">
@@ -18,18 +31,16 @@ function YourPosts() {
           />
         </div>
         <div className="card-body">
-          <h4 className="card-title">Ghost of Tsushima Glitch</h4>
-          <h6>posted by: BestUs3r123</h6>
+          <h4 className="card-title">{props.title}</h4>
+          <h6>posted by: {props.author}</h6>
           <p className="card-text">
-            I’m in Act II playing the mission Ghost of Yarakiwa, I die, and am
-            then respawned across the map. The game now has me in a loop to
-            return to my Tale in 10 seconds, but spawned me 7km away from it.
-            Has anyone else experienced this?
+           {props.body}
           </p>
         </div>
       </div>
+      <DeletePost onClick ={() => handleDelete(props._id)} />
       <div className="card-footer">
-        <small className="text-muted">Last updated 3 mins ago</small>
+        <small className="text-muted">{props.date}</small>
       </div>
     </div>
     </>
