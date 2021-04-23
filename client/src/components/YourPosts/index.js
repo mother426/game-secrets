@@ -1,7 +1,20 @@
 import React from 'react';
+import api from '../../utils/api';
+import DeletePost from '../DeletePost';
 import './style.css';
 
 function YourPosts(props) {
+
+  const handleDelete = async (id) => {
+    try {
+      console.log(id);
+      const post = await api.deletePost(id);
+      console.log(post)
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <>
     <h4 className="your-secrets-title">
@@ -25,6 +38,7 @@ function YourPosts(props) {
           </p>
         </div>
       </div>
+      <DeletePost onClick ={() => handleDelete(props._id)} />
       <div className="card-footer">
         <small className="text-muted">{props.date}</small>
       </div>
