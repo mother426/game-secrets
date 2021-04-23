@@ -27,7 +27,7 @@ function YourPosts(props) {
           <img
             className=""
             src="https://i.guim.co.uk/img/media/c39bf8486b167ff4d297f4db15efe4e18078df98/683_269_2713_1628/master/2713.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=aa104510291a053bf3f40583b4e2e86c"
-            alt="Card image cap"
+            alt="Card cap"
           />
         </div>
         <div className="card-body">
@@ -38,7 +38,7 @@ function YourPosts(props) {
           </p>
         </div>
       </div>
-      <DeletePost onClick ={() => handleDelete(props._id)} />
+    <DeletePost onClick ={() => handleDelete("6082ebb8d450a96a81a78b08")} />
       <div className="card-footer">
         <small className="text-muted">{props.date}</small>
       </div>
