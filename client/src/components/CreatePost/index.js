@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import api from "../../utils/api";
+import { Link } from 'react-router-dom';
 import "./style.css";
 var moment = require("moment");
 
@@ -51,8 +52,10 @@ function CreatePost({ user, changeUser }) {
         <div className="custom-file">
           <input type="file" className="custom-file-input" id="inputGroupFile01" />
           <label className="custom-file-label" htmlFor="inputGroupFile01">Choose file</label>
-
+          {/* when a post is submitted it re-directs you back to the profile page */}
+        <Link to="/profile">
           <button type="submit" className="btn btn-primary">Submit</button>
+        </Link>
         </div>
 
       </form>
