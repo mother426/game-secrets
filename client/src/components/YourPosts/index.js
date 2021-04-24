@@ -38,7 +38,7 @@ function YourPosts(props) {
           </p>
         </div>
       </div>
-    <DeletePost onClick ={() => handleDelete("6082ebb8d450a96a81a78b08")} />
+    <DeletePost onClick ={() => handleDelete(props._id)} />
       <div className="card-footer">
         <small className="text-muted">{props.date}</small>
       </div>
