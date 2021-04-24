@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import "./style.css";
 var moment = require("moment");
 
-function CreatePost({ user, changeUser }) {
+function CreatePost() {
   const titleRef = useRef();
   const bodyRef = useRef();
   const authorRef = useRef();
@@ -24,7 +24,7 @@ function CreatePost({ user, changeUser }) {
     console.log(data);
     await api.createPost(data);
   }
-  const redirectHandler = console.log("test");
+  
   return (
     <div>
       <h1>Create a Game Secret</h1>

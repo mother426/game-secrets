@@ -51,6 +51,7 @@ module.exports = {
             console.log(err, "this is an error");
             res.sendStatus(500).json(err);
           }
-    }
+    },
+    
     
 }
