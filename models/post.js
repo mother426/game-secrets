@@ -6,6 +6,12 @@ const postSchema = new Schema({
   author: { type: String, required: true },
   body: String,
   date: { type: String, required: true },
+  images: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Image"
+    }
+  ]
 });
 
 const Post = mongoose.model("Post", postSchema);
