@@ -45,7 +45,7 @@ for (let i = 0; i < posts.length; i++) {
             <img
               className=""
               src="https://i.guim.co.uk/img/media/c39bf8486b167ff4d297f4db15efe4e18078df98/683_269_2713_1628/master/2713.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=aa104510291a053bf3f40583b4e2e86c"
-              alt="Card image cap"
+              alt="Card cap"
             />
           </div>
           <div className="card-body">
@@ -54,9 +54,10 @@ for (let i = 0; i < posts.length; i++) {
             <p className="card-text">
               {post.body}
             </p>
+            {/* TODO: redirect back to profile page on click */}
+        <DeletePost onClick={() => handleDelete(post._id)} />
           </div>
         </div>
-        <DeletePost onClick={() => handleDelete()} />
         <div className="card-footer">
           <small className="text-muted">{post.date}</small>
         </div>

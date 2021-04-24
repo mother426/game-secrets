@@ -12,7 +12,7 @@ function Profile() {
     <>
     {/* TODO: used to welcome the logged in user */}
       <div className="welcome-user">
-        Welcome {userName.name} !
+        Welcome, {userName.name}!
       </div>
       {/* create a secret card */}
       {/* TODO: create a secret */}

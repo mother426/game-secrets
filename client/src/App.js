@@ -5,6 +5,7 @@ import LoginPage from "./pages/Login";
 import Navbar from "./components/Navbar";
 import FindSecretsPage from "./pages/FindSecrets";
 import ProfilePage from "./pages/Profile";
+import FullPost from './pages/FullPost'
 import "./App.css";
 import AuthRoute from "./components/AuthRoute";
 import CreatePost from "./pages/CreatePost";
@@ -47,6 +48,7 @@ function App() {
           component={FindSecretsPage}
         />
         <AuthRoute exact path="/profile" user={user} component={ProfilePage} />
+        <AuthRoute exact path="/fullpost" user={user} component={FullPost} />
         <AuthRoute exact path="/createpost" user={user} component={CreatePost} changeUser={changeUser}/>
         <AuthRoute exact path="/" user={user} component={HomePage} />
       </Switch>
