@@ -5,12 +5,20 @@ import './style.css';
 
 function YourPosts() {
   const [posts, setPosts] = useState([]);
-
+  const localUser = JSON.parse(sessionStorage.getItem("user"));
+  const username = localUser.name
+  let usersPosts = [];
+for (let i = 0; i < posts.length; i++) {
+    if (posts[i].author === username) {
+        usersPosts.push(posts[i]);
+    }
+}
+  console.log(usersPosts)
     useEffect(() => {
         api.getPosts()
             .then(results => {
                 setPosts(results.data);
-            })
+            }) 
             .catch(err => console.log(err));
     }, []);
   const handleDelete = async (id) => {
@@ -30,8 +38,8 @@ function YourPosts() {
       <h4 className="your-secrets-title">
         Your Secrets
     </h4>
-      {posts.map(post => (
-      <div className="card post-card">
+      {usersPosts.map(post => (
+      <div key={post._id} className="card post-card">
         <div className="card-horizontal">
           <div className="img-square-wrapper">
             <img
@@ -48,12 +56,12 @@ function YourPosts() {
             </p>
           </div>
         </div>
-        <DeletePost onClick={() => handleDelete(post._id)} />
+        <DeletePost onClick={() => handleDelete()} />
         <div className="card-footer">
           <small className="text-muted">{post.date}</small>
         </div>
       </div>
-     ))}
+ ))}
     </>
   )
 }

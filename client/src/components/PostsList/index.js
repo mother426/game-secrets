@@ -15,7 +15,7 @@ function PostsList() {
     return (
         <>
             {posts.map(post => (
-                <div className="card">
+                <div key={post._id} className="card">
                     <div className="card-horizontal">
                         <div className="img-square-wrapper">
                         </div>
