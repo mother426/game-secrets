@@ -47,13 +47,12 @@ module.exports = {
             //TODO: save the image to the data base, as a part of the post as a URL string
             // console.log(newPost._id, req.session.user_id);
             // push images into users posts below?
+            //savepublic id to database?
             db.User.findOneAndUpdate({_id: req.session.user_id }, {$push:{posts: newPost._id}}, {new: true})
             .then(() => res.sendStatus(200));
         } catch (err) {
             console.log(err, "this is an error");
             res.sendStatus(500).json(err);
           }
-    },
-    
-    
+    }, 
 }
