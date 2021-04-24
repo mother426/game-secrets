@@ -54,6 +54,7 @@ for (let i = 0; i < posts.length; i++) {
             <p className="card-text">
               {post.body}
             </p>
+            {/* TODO: redirect back to profile page on click */}
         <DeletePost onClick={() => handleDelete(post._id)} />
           </div>
         </div>
