@@ -38,17 +38,6 @@ for (let i = 0; i < posts.length; i++) {
       <h4 className="your-secrets-title">
         Your Secrets
     </h4>
-<<<<<<< HEAD
-
-    <div className="card post-card">
-      <div className="card-horizontal">
-        <div className="img-square-wrapper">
-          <img
-            className=""
-            src="https://i.guim.co.uk/img/media/c39bf8486b167ff4d297f4db15efe4e18078df98/683_269_2713_1628/master/2713.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=aa104510291a053bf3f40583b4e2e86c"
-            alt="Card cap"
-          />
-=======
       {usersPosts.map(post => (
       <div key={post._id} className="card post-card">
         <div className="card-horizontal">
@@ -56,7 +45,7 @@ for (let i = 0; i < posts.length; i++) {
             <img
               className=""
               src="https://i.guim.co.uk/img/media/c39bf8486b167ff4d297f4db15efe4e18078df98/683_269_2713_1628/master/2713.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=aa104510291a053bf3f40583b4e2e86c"
-              alt="Card image cap"
+              alt="Card cap"
             />
           </div>
           <div className="card-body">
@@ -65,23 +54,14 @@ for (let i = 0; i < posts.length; i++) {
             <p className="card-text">
               {post.body}
             </p>
+        <DeletePost onClick={() => handleDelete(post._id)} />
           </div>
->>>>>>> master
         </div>
-        <DeletePost onClick={() => handleDelete()} />
         <div className="card-footer">
           <small className="text-muted">{post.date}</small>
         </div>
-    <DeletePost onClick ={() => handleDelete(props._id)} />
       </div>
-<<<<<<< HEAD
-      <div className="card-footer">
-        <small className="text-muted">{props.date}</small>
-      </div>
-    </div>
-=======
  ))}
->>>>>>> master
     </>
   )
 }
