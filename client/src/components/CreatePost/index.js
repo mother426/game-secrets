@@ -27,7 +27,7 @@ function CreatePost({ user, changeUser }) {
   const redirectHandler = console.log("test");
   return (
     <div>
-      <h1>Create Player Question</h1>
+      <h1>Create a Game Secret</h1>
       <form onSubmit= {createPostHandler}>
         <div>
           <p>Post by:</p>
