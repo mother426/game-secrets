@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../utils/api';
 import DeletePost from '../DeletePost';
+import ViewFull from "../ViewFull";
+import { Link } from "react-router-dom";
 import './style.css';
 
-function YourPosts() {
+function YourPosts(e) {
   const [posts, setPosts] = useState([]);
   const localUser = JSON.parse(sessionStorage.getItem("user"));
   const username = localUser.name
@@ -39,7 +41,7 @@ for (let i = 0; i < posts.length; i++) {
         Your Secrets
     </h4>
       {usersPosts.map(post => (
-      <div key={post._id} className="card post-card">
+      <div data-user={post._id} key={post._id} className="card post-card">
         <div className="card-horizontal">
           <div className="img-square-wrapper">
             <img
@@ -54,6 +56,11 @@ for (let i = 0; i < posts.length; i++) {
             <p className="card-text">
               {post.body}
             </p>
+            <Link to="/fullpost">
+                                <div className="more-details">
+                                    <ViewFull />
+                                </div>
+                            </Link>
             {/* TODO: redirect back to profile page on click */}
         <DeletePost onClick={() => handleDelete(post._id)} />
           </div>

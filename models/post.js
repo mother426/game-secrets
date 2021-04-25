@@ -6,6 +6,7 @@ const postSchema = new Schema({
   author: { type: String, required: true },
   body: String,
   date: { type: String, required: true },
+  comments: [String],
   images: [
     {
       type: Schema.Types.ObjectId,
