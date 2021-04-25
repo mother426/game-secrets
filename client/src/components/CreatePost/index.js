@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import api from "../../utils/api";
-import { Link, Redirect } from 'react-router-dom';
 import "./style.css";
+import { Redirect, useHistory } from "react-router-dom";
 var moment = require("moment");
 
 function CreatePost({ user, changeUser }) {
@@ -36,6 +36,19 @@ function CreatePost({ user, changeUser }) {
 
     api.uploadImageFile(formData);
     //TODO: save URL string to database
+  }
+
+  
+  // FIXME:    
+  // const history = useHistory();
+  const onSubmit = () => {
+    if(uploadImage === true) {
+      console.log("it's workkkinnggg")
+      return <Redirect from="/createpost"  to="/profile" />
+      // console.log('this shit working')
+      // let path = `/`; 
+      // history.push(path);
+    }
   }
 
   return (
@@ -79,8 +92,8 @@ function CreatePost({ user, changeUser }) {
             }}
           />
           {/* <label className="custom-file-label" htmlFor="inputGroupFile01">Choose file</label> */}
-
-          <button type="submit" className="btn btn-primary" onClick={uploadImage}>
+          
+          <button type="submit" className="btn btn-primary" onSubmit={() => {uploadImage(); onSubmit(); }}>
             Submit
           </button>
         </div>

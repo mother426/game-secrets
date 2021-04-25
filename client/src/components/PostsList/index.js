@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import ViewFull from '../ViewFull'
+import SavePost from '../SavePost'
 import api from "../../utils/api";
 
 function PostsList() {
@@ -13,6 +14,10 @@ function PostsList() {
             })
             .catch(err => console.log(err));
     }, []);
+
+    const handleSave = () => {
+        console.log('bruh moment')
+    }
 
     return (
         <>
@@ -36,6 +41,7 @@ function PostsList() {
                                 <small className="text-muted">{post.date}</small>
                             </div>
                         </div>
+                            <SavePost onClick={() => {handleSave()}} />
                     </div>
                 </div>
             ))}
