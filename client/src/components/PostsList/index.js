@@ -5,7 +5,6 @@ import api from "../../utils/api";
 
 function PostsList() {
     const [posts, setPosts] = useState([]);
-
     useEffect(() => {
         api.getPosts()
             .then(results => {
@@ -27,7 +26,7 @@ function PostsList() {
                             <p className="card-text">
                                 {post.body}
                             </p>
-                            <Link to="/fullpost">
+                            <Link to={"/post/" + post._id}>
                                 <div className="more-details">
                                     <ViewFull />
                                 </div>
