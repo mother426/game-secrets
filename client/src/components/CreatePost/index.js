@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import api from "../../utils/api";
+import { Link, Redirect } from 'react-router-dom';
 import "./style.css";
 var moment = require("moment");
 
@@ -42,8 +43,8 @@ function CreatePost({ user, changeUser }) {
 
   return (
     <div>
-      <h1>Create Player Question</h1>
-      <form onSubmit={createPostHandler}>
+      <h1>Create a Game Secret</h1>
+      <form onSubmit= {createPostHandler}>
         <div>
           <p>Post by:</p>
           <input disabled="disabled" ref={authorRef} value={localUser.name} />

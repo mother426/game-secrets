@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import api from "../../utils/api";
 import DeletePost from "../DeletePost";
-import { Image } from "cloudinary-react";
+import ViewFull from "../ViewFull";
+import { Link } from "react-router-dom";
 import "./style.css";
 
-function YourPosts() {
+function YourPosts(e) {
   const [posts, setPosts] = useState([]);
   const localUser = JSON.parse(sessionStorage.getItem("user"));
   const username = localUser.name;
@@ -15,7 +16,7 @@ function YourPosts() {
     }
   }
   console.log(usersPosts);
-  
+
   useEffect(() => {
     api
       .getPosts()
@@ -24,7 +25,7 @@ function YourPosts() {
       })
       .catch((err) => console.log(err));
   }, []);
-  
+
   const handleDelete = async (id) => {
     try {
       console.log(id);
@@ -39,18 +40,24 @@ function YourPosts() {
     <>
       <h4 className="your-secrets-title">Your Secrets</h4>
       {usersPosts.map((post) => (
-        <div key={post._id} className="card post-card">
+        <div data-user={post._id} key={post._id} className="card post-card">
           <div className="card-horizontal">
             <div className="img-square-wrapper">
-            <Image cloudName="dlq3ftm0n" publicId={post.image}/>
+              <Image cloudName="dlq3ftm0n" publicId={post.image} />
             </div>
             <div className="card-body">
               <h4 className="card-title">{post.title}</h4>
               <h6>posted by: {post.author}</h6>
               <p className="card-text">{post.body}</p>
+              <Link to="/fullpost">
+                <div className="more-details">
+                  <ViewFull />
+                </div>
+              </Link>
+              {/* TODO: redirect back to profile page on click */}
+              <DeletePost onClick={() => handleDelete(post._id)} />
             </div>
           </div>
-          <DeletePost onClick={() => handleDelete()} />
           <div className="card-footer">
             <small className="text-muted">{post.date}</small>
           </div>

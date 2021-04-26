@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+import ViewFull from '../ViewFull';
 import { Image } from "cloudinary-react";
 import "./style.css";
 
@@ -12,13 +14,18 @@ function Post() {
         </div>
         <div className="card-body">
           <h4 className="card-title">Ghost of Tsushima Glitch</h4>
-          <h6>posted by: BestUs3r123</h6>
+          <h6>posted by: <Link to="/profile">BestUs3r123</Link></h6>
           <p className="card-text">
             I’m in Act II playing the mission Ghost of Yarakiwa, I die, and am
             then respawned across the map. The game now has me in a loop to
             return to my Tale in 10 seconds, but spawned me 7km away from it.
             Has anyone else experienced this?
           </p>
+          <Link to="/profile">
+            <div className="more-details">
+              <ViewFull />
+            </div>
+          </Link>
         </div>
       </div>
       <div className="card-footer">
