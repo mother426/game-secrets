@@ -30,9 +30,7 @@ function PostsList() {
         <div key={post._id} className="card post-list-cards">
           <div className="card-horizontal">
             <div className="img-square-wrapper">
-              {post.image.length && (
                 <Image cloudName="dlq3ftm0n" publicId={post.image} />
-              )}
             </div>
             <div className="card-body">
               <h4 className="card-title">{post.title}</h4>

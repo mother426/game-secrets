@@ -10,7 +10,7 @@ const FullPost = props => {
       .then(res => setComment(res.data))
       .catch(err => console.log(err))
   }, []);
-  const commentsArray = comment.comments
+  // const commentsArray = comment.comments
   const commentHandler = async (e) => {
     e.preventDefault();
     const data = {
@@ -18,6 +18,7 @@ const FullPost = props => {
     }
     console.log(data)
     // await api.createComment(data)
+    // Get this working!^
   }
 
   return (
@@ -51,11 +52,11 @@ const FullPost = props => {
           Submit
           </button>
       </form>
-      {/* {commentsArray.map(comment => ( */}
-      <div className="card">
-        {comment.comments}
+      {comment.comments && comment.comments.map((comment,i) => (
+      <div key={i} className="card">
+        {comment}
       </div>
-      {/* // ))} */}
+     ))}
     </>
   );
 };
