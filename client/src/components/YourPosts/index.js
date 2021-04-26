@@ -51,7 +51,7 @@ function YourPosts(e) {
               <h4 className="card-title">{post.title}</h4>
               <h6>posted by: {post.author}</h6>
               <p className="card-text">{post.body}</p>
-              <Link to="/fullpost">
+              <Link to={"/posts/" + post._id}>
                 <div className="more-details">
                   <ViewFull />
                 </div>
