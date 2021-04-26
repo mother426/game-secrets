@@ -1,4 +1,5 @@
 import React from "react";
+import { Image } from "cloudinary-react";
 import "./style.css";
 
 function SearchResults(props) {
@@ -9,7 +10,7 @@ function SearchResults(props) {
     <div key={post._id} className="card results-card">
       <div className="card-horizontal">
         <div className="img-square-wrapper">
-          <img/>
+        <Image cloudName="dlq3ftm0n" publicId={post.image} />
         </div>
         <div className="card-body">
           <h4 className="card-title">{post.title}</h4>
