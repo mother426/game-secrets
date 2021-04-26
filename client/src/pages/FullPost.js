@@ -1,40 +1,42 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Image } from "cloudinary-react";
 import api from '../utils/api';
 
 const FullPost = props => {
-  const [comment, setComment] = useState([]);
+  const [post, setPost] = useState([]);
   const commentRef = useRef();
 
   useEffect(() => {
     api.getPost(props.match.params.id)
-      .then(res => setComment(res.data))
+      .then(res => setPost(res.data))
       .catch(err => console.log(err))
   }, []);
-  // const commentsArray = comment.comments
+  // const commentsArray = post.comments
   const commentHandler = async (e) => {
     e.preventDefault();
     const data = {
       comments: commentRef.current.value
     }
     console.log(data)
-    // await api.createComment(data)
+    await api.createComment(data)
     // Get this working!^
   }
 
   return (
     <>
-      <div key={comment._id} className="card commented-main-card">
+      <div key={post._id} className="card commented-main-card">
         <div className="card-horizontal">
           <div className="img-square-wrapper">
+          <Image cloudName="dlq3ftm0n" publicId={post.image}/>
           </div>
           <div className="card-body">
-            <h4 className="card-title">{comment.title}</h4>
-            <h6>Posted By: {comment.author}</h6>
+            <h4 className="card-title">{post.title}</h4>
+            <h6>Posted By: {post.author}</h6>
             <p className="card-text">
-              {comment.body}
+              {post.body}
             </p>
             <div className="card-footer">
-              <small className="text-muted">{comment.date}</small>
+              <small className="text-muted">{post.date}</small>
             </div>
           </div>
         </div>
@@ -52,9 +54,9 @@ const FullPost = props => {
           Submit
           </button>
       </form>
-      {comment.comments && comment.comments.map((comment,i) => (
+      {post.comments && post.comments.map((post,i) => (
       <div key={i} className="card">
-        {comment}
+        {post}
       </div>
      ))}
     </>
