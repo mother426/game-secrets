@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import ViewFull from '../ViewFull'
+import SavePost from '../SavePost'
 import api from "../../utils/api";
+import './style.css';
 
 function PostsList() {
     const [posts, setPosts] = useState([]);
@@ -13,16 +15,23 @@ function PostsList() {
             .catch(err => console.log(err));
     }, []);
 
+    // maybe a .push()
+    const handleSave = () => {
+        if('clicked') {
+            console.log('bruh moment')
+        }
+    }
+
     return (
         <>
             {posts.map(post => (
-                <div key={post._id} className="card">
+                <div key={post._id} className="card post-list-cards">
                     <div className="card-horizontal">
                         <div className="img-square-wrapper">
                         </div>
                         <div className="card-body">
                             <h4 className="card-title">{post.title}</h4>
-                            <h6>Posted By: <Link to="/profile">{post.author}</Link></h6>
+                            <h6>Posted By: {post.author}</h6>
                             <p className="card-text">
                                 {post.body}
                             </p>
@@ -35,6 +44,7 @@ function PostsList() {
                                 <small className="text-muted">{post.date}</small>
                             </div>
                         </div>
+                            <SavePost onClick={handleSave} />
                     </div>
                 </div>
             ))}

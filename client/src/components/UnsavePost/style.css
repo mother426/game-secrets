@@ -1,0 +1,10 @@
+.unsave-btn {
+    margin: 10px;
+    transition: .45s;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.unsave-btn:hover {
+    color: rgb(235, 69, 69);
+}
