@@ -51,11 +51,11 @@ const FullPost = props => {
             Submit
           </button>
           </form>
-          {/* {commentsArray.map(comment => ( */}
+          {commentsArray.map(comment => (
           <div className="card">
             {comment.comments}
           </div>
-      {/* // ))} */}
+      ))}
       </>
     );
 };
