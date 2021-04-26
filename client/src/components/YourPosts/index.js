@@ -56,7 +56,7 @@ for (let i = 0; i < posts.length; i++) {
             <p className="card-text">
               {post.body}
             </p>
-            <Link to="/fullpost">
+            <Link to={"/post/" + post._id}>
                                 <div className="more-details">
                                     <ViewFull />
                                 </div>

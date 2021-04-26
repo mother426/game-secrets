@@ -10,7 +10,8 @@ const api = {
     getPosts: () => axios.get('/api/posts'),
     getPost: (id) => axios.get('/api/posts/' + id),
     uploadImageFile: (data) => axios.post("https://api.cloudinary.com/v1_1/dlq3ftm0n/image/upload", data),
-    getYourPosts: (id) => axios.get('/api/user/' + id)
+    getYourPosts: (id) => axios.get('/api/user/' + id),
+    createComment: (data) => axios.put('/api/posts', data)
 }
 
 export default api;

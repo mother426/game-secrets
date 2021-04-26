@@ -55,4 +55,9 @@ module.exports = {
             res.sendStatus(500).json(err);
           }
     }, 
+    // createComment: async function (req, res) {
+    //     try {
+    //         const newComment = await db.Post.
+    //     }
+    // }
 }
