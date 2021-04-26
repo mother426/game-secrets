@@ -16,6 +16,8 @@ router
     .delete(postsController.remove);
 router 
     .route("/image/upload")
-    .post(upload, postsController.uploadImage)
-
+    .post(upload, postsController.uploadImage);
+router 
+    .route("/comments")
+    .post(postsController.postComment);
 module.exports = router

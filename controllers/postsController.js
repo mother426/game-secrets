@@ -47,10 +47,6 @@ module.exports = {
                 date: req.body.date,
                 image:  req.body.image
             })
-            //TODO: save the image to the data base, as a part of the post as a URL string
-            // console.log(newPost._id, req.session.user_id);
-            // push images into users posts below?
-            //savepublic id to database?
             db.User.findOneAndUpdate({_id: req.session.user_id }, {$push:{posts: newPost._id}}, {new: true})
             .then(() => res.sendStatus(200));
         } catch (err) {
@@ -63,6 +59,17 @@ module.exports = {
             const result = await uploadToCloudinary(req.file.path, {folder: 'gameSecrets'});
             if (req.file) unlinkSync(req.file.path);
             res.json(result.public_id);
+        } catch (err) {
+            console.log(err);
+            res.sendStatus(500).json(err);
+        }
+    },
+    postComment: async function (req, res) {
+        try {
+            const result = await db.Comment.create({
+                content: req.body.content
+            })
+            db.Post.findOneAndUpdate({_id: req.body._id}, {$push:{comments: result._id}}, {new: true})
         } catch (err) {
             console.log(err);
             res.sendStatus(500).json(err);
