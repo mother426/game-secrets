@@ -23,6 +23,7 @@ function FindSecrets(props) {
     }
   };
 
+  
   return (
     <>
       <div className="background-search">
