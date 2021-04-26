@@ -17,26 +17,29 @@ function CreatePost({ user, changeUser }) {
 
   const createPostHandler = async (e) => {
     e.preventDefault();
+    const image = await uploadImage();
+    console.log(image)
     // reference file URL in the data object being sent to createPost?
     const data = {
       author: authorRef.current.value,
       title: titleRef.current.value,
       body: bodyRef.current.value,
       date: dateRef.current.value,
+      image: image.data,
     };
     console.log(data);
     await api.createPost(data);
   };
 
-  const uploadImage = () => {
+  const uploadImage = async () => {
     console.log(imageSelected);
     const formData = new FormData();
     formData.append("file", imageSelected);
-    formData.append("upload_preset", "rstuyfou");
+    formData.append("upload_preset", process.env.UPLOAD_PRESET);
 
-    api.uploadImageFile(formData);
+    return await api.uploadImageFile(formData);
     //TODO: save URL string to database
-  }
+  };
 
   return (
     <div>
@@ -80,7 +83,7 @@ function CreatePost({ user, changeUser }) {
           />
           {/* <label className="custom-file-label" htmlFor="inputGroupFile01">Choose file</label> */}
 
-          <button type="submit" className="btn btn-primary" onClick={uploadImage}>
+          <button type="submit" className="btn btn-primary">
             Submit
           </button>
         </div>

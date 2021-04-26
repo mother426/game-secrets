@@ -1,3 +1,4 @@
+const fs = require("fs");
 require("dotenv").config();
 const mongoose = require("mongoose");
 const express = require("express");
@@ -18,8 +19,8 @@ app.use(session({
   }
 }));
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
+app.use(express.json({ limit: '10mb' }));
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -35,4 +36,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactcms");
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
+  const dir = path.join(__dirname, 'tmp/');
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, 0744);
 });
