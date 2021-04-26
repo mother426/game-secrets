@@ -13,4 +13,5 @@ const api = {
     getYourPosts: (id) => axios.get('/api/user/' + id)
 }
 
+
 export default api;
