@@ -1,0 +1,11 @@
+.post-list-cards {
+    padding: 0;
+    border: none;
+    box-shadow: 0 0 10px rgb(230, 230, 230);
+    transition: .6s;
+    position: relative;
+}
+
+.post-list-cards:hover {
+    transform: scale(1.001, 1.01);
+}

@@ -4,7 +4,7 @@ import SearchResults from "../SearchResults";
 import "./style.css";
 
 function FindSecrets(props) {
-  const [form, setForm] = useState({search: ""});
+  const [form, setForm] = useState({ search: "" });
   const [searchResults, setSearchResults] = useState([]);
 
   const handleChange = (e) => {
@@ -26,31 +26,33 @@ function FindSecrets(props) {
   
   return (
     <>
-      <div className="search-area">
-        <h4 className="search-title">Search Game by Title to find Secrets</h4>
-        <div className="row justify-content-center">
-          <form className="form-inline">
-            <input
-              className="form-control mr-sm-2"
-              type="text"
-              name="search"
-              placeholder="Search for a Game"
-              aria-label="Search"
-              onChange={handleChange}
-              value={form.search}
-            />
-            <button
-              className="btn btn-outline-success my-2 my-sm-0"
-              type="submit"
-              onClick={handleSearch}
-            >
-              Search
+      <div className="background-search">
+        <div className="search-area">
+          <h4 className="search-title">Search for a Game Secret Here</h4>
+          <div className="row justify-content-center">
+            <form className="form-inline">
+              <input
+                className="form-control mr-sm-2"
+                type="text"
+                name="search"
+                placeholder="Search for a Game"
+                aria-label="Search"
+                onChange={handleChange}
+                value={form.search}
+              />
+              <button
+                className="search-btn btn btn-danger my-2 my-sm-0"
+                type="submit"
+                onClick={handleSearch}
+              >
+                Search
             </button>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
 
-      <SearchResults searchResults={searchResults}/>
+      <SearchResults searchResults={searchResults} />
     </>
   );
 }

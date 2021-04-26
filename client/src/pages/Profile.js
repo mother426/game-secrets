@@ -1,6 +1,7 @@
 import React from 'react';
 import Profile from '../components/Profile';
 import YourPosts from '../components/YourPosts';
+import YourSavedPosts from '../components/YourSavedPosts';
 
 function ProfilePage() {
     // const [yourPosts, setYourPosts] = useState([]);
@@ -15,6 +16,7 @@ function ProfilePage() {
         <>
         <Profile />
         <YourPosts />
+        <YourSavedPosts />
         </>
     )
 }

@@ -5,7 +5,7 @@ import PostsList from '../components/PostsList';
 function HomePage() {
     return (
         <>
-            <h4 style={{ textAlign: 'center', marginTop: 40, marginBottom: 20 }} className="home-title">
+            <h4 style={{ textAlign: 'center', marginTop: 100, marginBottom: 20 }} className="home-title">
                 Secrets Feed
             </h4>
             <Post />

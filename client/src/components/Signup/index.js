@@ -22,7 +22,7 @@ function Signup({user, changeUser}) {
     return (
         <> 
         {user.name && <Redirect to='/'/>}
-        <div className="card login-card">
+        <div style={{ marginTop: 50, marginRight: 100, marginLeft: 100}} className="card login-card">
             <form onSubmit={signupHandler}>
                 <h2>Sign Up</h2>
                 <div className="form-group">

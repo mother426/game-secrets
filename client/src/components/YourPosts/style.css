@@ -2,3 +2,15 @@
     text-align: center;
     margin: 30px;
 }
+
+.your-post-cards {
+    padding: 0;
+    border: none;
+    box-shadow: 0 0 20px rgb(213, 213, 213);
+    transition: .6s;
+    position: relative;
+}
+
+.your-post-cards:hover {
+    transform: scale(1.001, 1.01);
+}
