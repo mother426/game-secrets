@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import api from "../../utils/api";
-import { Link, Redirect } from 'react-router-dom';
 import "./style.css";
 var moment = require("moment");
 
@@ -42,8 +41,8 @@ function CreatePost({ user, changeUser }) {
   };
 
   return (
-    <div>
-      <h1>Create a Game Secret</h1>
+    <div className="create-secret-main">
+      <h1 className="create-secret-title">Create a Game Secret</h1>
       <form onSubmit= {createPostHandler}>
         <div>
           <p>Post by:</p>
@@ -82,10 +81,10 @@ function CreatePost({ user, changeUser }) {
             }}
           />
           {/* <label className="custom-file-label" htmlFor="inputGroupFile01">Choose file</label> */}
-
           <button type="submit" className="btn btn-primary">
             Submit
           </button>
+          {/* </Redirect> */}
         </div>
       </form>
     </div>

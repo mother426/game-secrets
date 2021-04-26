@@ -1,0 +1,10 @@
+.save-btn {
+    margin: 10px;
+    transition: .45s;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.save-btn:hover {
+    color: rgb(242, 197, 83);
+}
