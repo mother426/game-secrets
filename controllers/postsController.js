@@ -1,5 +1,7 @@
 const db = require('../models');
-
+const { uploadToCloudinary } = require("./upload");
+const path = require("path");
+const { unlinkSync } = require('fs');
 // make sure session is logged in with every api call
 module.exports = {
     findAll: function(req, res) {
@@ -36,13 +38,14 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     createPost: async function (req, res) {
-        console.log("here")
+        console.log("IAMGE: ", req.body)
         try {
             const newPost = await db.Post.create({
                 title: req.body.title,
                 body: req.body.body,
                 author: req.body.author,
-                date: req.body.date
+                date: req.body.date,
+                image:  req.body.image
             })
             //TODO: save the image to the data base, as a part of the post as a URL string
             // console.log(newPost._id, req.session.user_id);
@@ -54,5 +57,15 @@ module.exports = {
             console.log(err, "this is an error");
             res.sendStatus(500).json(err);
           }
-    }, 
+    },
+    uploadImage: async function (req, res) {
+        try {
+            const result = await uploadToCloudinary(req.file.path, {folder: 'gameSecrets'});
+            if (req.file) unlinkSync(req.file.path);
+            res.json(result.public_id);
+        } catch (err) {
+            console.log(err);
+            res.sendStatus(500).json(err);
+        }
+    } 
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Image } from "cloudinary-react";
 import "./style.css";
 
 function Post() {
@@ -7,11 +8,7 @@ function Post() {
     <div className="card">
       <div className="card-horizontal">
         <div className="img-square-wrapper">
-          <img
-            className=""
-            src="https://i.guim.co.uk/img/media/c39bf8486b167ff4d297f4db15efe4e18078df98/683_269_2713_1628/master/2713.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=aa104510291a053bf3f40583b4e2e86c"
-            alt="Card image cap"
-          />
+          <Image cloudName="dlq3ftm0n" publicId="dwc53gz8kzdamktygcxh"/>
         </div>
         <div className="card-body">
           <h4 className="card-title">Ghost of Tsushima Glitch</h4>

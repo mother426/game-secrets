@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const postsController = require("../../controllers/postsController");
+const { upload } = require("../../controllers/upload");
 
 router 
     .route("/")
@@ -13,5 +14,8 @@ router
     .route("/:id")
     .get(postsController.findById)
     .delete(postsController.remove);
+router 
+    .route("/image/upload")
+    .post(upload, postsController.uploadImage)
 
 module.exports = router
