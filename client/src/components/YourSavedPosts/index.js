@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../utils/api';
-import DeletePost from '../DeletePost';
+import UnsavePost from '../UnsavePost';
 import ViewFull from "../ViewFull";
-import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
-import './style.css';
 
-function YourPosts(e) {
+function YourSavedPosts(e) {
   const [posts, setPosts] = useState([]);
   const localUser = JSON.parse(sessionStorage.getItem("user"));
   const username = localUser.name
@@ -25,30 +23,20 @@ function YourPosts(e) {
       .catch(err => console.log(err));
   }, []);
 
-  const handleDelete = async (id) => {
+  const handleUnsave = async (id) => {
     try {
       console.log(id);
-      const post = await api.deletePost(id);
+      const post = await api.getPost(id);
       console.log(post)
     } catch (err) {
       console.log(err);
     }
   }
 
-  // FIXME: 
-  // const onSubmit = () => {
-  //   if (handleDelete) {
-  //     console.log('onSubmit reload is working')
-  //     return window.location.reload('/profile')
-  //   }
-  // }
-
-
-
   return (
     <>
       <h4 className="your-secrets-title">
-        Your Secrets
+        Saved Secrets
       </h4>
       {usersPosts.map(post => (
         <div data-user={post._id} key={post._id} className="card post-card your-post-cards">
@@ -73,7 +61,7 @@ function YourPosts(e) {
               </Link>
               {/* TODO: redirect back to profile page on click */}
             </div>
-              <DeletePost onClick={() => handleDelete(post._id)} />
+              <UnsavePost onClick={() => handleUnsave(post._id)} />
           </div>
         </div>
       ))}
@@ -81,4 +69,4 @@ function YourPosts(e) {
   )
 }
 
-export default YourPosts;
+export default YourSavedPosts;

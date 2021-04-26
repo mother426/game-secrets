@@ -48,7 +48,7 @@ function App() {
           component={FindSecretsPage}
         />
         <AuthRoute exact path="/profile" user={user} component={ProfilePage} />
-        <AuthRoute exact path="/fullpost" user={user} component={FullPost} />
+        <AuthRoute exact path="/post/:id" user={user} component={FullPost} />
         <AuthRoute exact path="/createpost" user={user} component={CreatePost} changeUser={changeUser}/>
         <AuthRoute exact path="/" user={user} component={HomePage} />
       </Switch>

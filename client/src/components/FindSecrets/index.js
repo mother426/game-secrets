@@ -27,7 +27,7 @@ function FindSecrets(props) {
     <>
       <div className="background-search">
         <div className="search-area">
-          <h4 className="search-title">Search Game by Title to find Secrets</h4>
+          <h4 className="search-title">Search for a Game Secret Here</h4>
           <div className="row justify-content-center">
             <form className="form-inline">
               <input
@@ -40,7 +40,7 @@ function FindSecrets(props) {
                 value={form.search}
               />
               <button
-                className="search-btn btn btn-outline-success my-2 my-sm-0"
+                className="search-btn btn btn-danger my-2 my-sm-0"
                 type="submit"
                 onClick={handleSearch}
               >

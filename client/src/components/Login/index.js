@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Redirect } from "react-router";
 import api from "../../utils/api";
-import './style.css';
+import "./style.css";
 
 function Login({user, changeUser}) {
   const emailRef = useRef();
@@ -22,7 +22,7 @@ function Login({user, changeUser}) {
 
     <>
     {user.email && <Redirect to='/'/>}
-    <div className="card login-card">
+    <div style={{ marginTop: 100, marginRight: 100, marginLeft: 100 }} className="card login-card">
       <form onSubmit={handleLogin}>
         <h2>Login</h2>
         <div className="form-group">

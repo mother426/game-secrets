@@ -33,24 +33,28 @@ const postSeed = [
     author: "John",
     body: "sdfdsfdsfsdfsdfsdfdsfsdfsdf",
     date: "2021-05-02",
+    comments: "great!"
   },
   {
     title: "post seed 2",
     author: "Brandon",
     body: "aertiuhsadjklfkoajsdfo",
     date: "1994-07-01",
+    comments: ["great!", "terrible!"]
   },
   {
     title: "post seed 3",
     author: "Dylan",
     body: "aertiuhsadjklfkoajsdfo",
     date: "2001-06-04",
+    comments: "great!"
   },
   {
     title: "post seed 4",
     author: "Taylor",
     body: "aertiuhsadjklfkoajsdfo",
     date: "2012-01-01",
+    comments: "great!"
   },
 ];
 

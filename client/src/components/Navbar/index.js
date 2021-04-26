@@ -15,7 +15,7 @@ function Navbar(props) {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav style={{position: 'fixed', top: 0, padding: 10, zIndex: 9}} className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
         Game Secrets
       </Link>
@@ -47,7 +47,7 @@ function Navbar(props) {
           <li className="nav-item">
             <Link
               to="/logout"
-              className=  "nav-link active nav-link"
+              className="nav-link active nav-link"
               onClick={handleLogout}
             >
               Logout
