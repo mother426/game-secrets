@@ -3,6 +3,7 @@ import api from "../../utils/api";
 import DeletePost from "../DeletePost";
 import ViewFull from "../ViewFull";
 import { Link } from "react-router-dom";
+import { Image } from "cloudinary-react";
 import "./style.css";
 
 function YourPosts(e) {
