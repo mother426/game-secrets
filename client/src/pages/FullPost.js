@@ -15,7 +15,7 @@ const FullPost = props => {
   const commentHandler = async (e) => {
     e.preventDefault();
     const data = {
-      comments: commentRef.current.value
+      content: commentRef.current.value
     }
     console.log(data)
     await api.createComment(data)

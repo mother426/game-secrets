@@ -11,7 +11,7 @@ const api = {
     getPost: (id) => axios.get('/api/posts/' + id),
     uploadImageFile: (data) => axios.post("/api/posts/image/upload", data),
     getYourPosts: (id) => axios.get('/api/user/' + id),
-    createComment: (data) => axios.post('/api/posts/comments', data)
+    createComment: (data) => axios.post('/api/posts/:id', data)
 }
 
 
