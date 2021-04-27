@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Project 3 Game Secrets
+A web application that allows users to share game secrets amongst each other
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+* [Deployed Site](#deployed-site)
+* [User Story](#user-story)
+* [Description](#description)
+* [Process](#process)
+* [Screenshots](#screenshots)
+* [Sources](#sources)
+* [Technologies](#Technologies)
+* [Installation](#installation)
+* [Credits](#Credits)
+* [Contributing](#contributing)
 
-In the project directory, you can run:
+## Deployed Site
+---
+Deployed Website: 
 
-### `npm start`
+## User Story
+---
+Game secrets is an application to help even the most frustrated gamers level up...LITERALLY!  Users will be able to create a personal profile to post gamer questions and pass on gaming secrets.  The user will access the search bar to search for the title of the game they are playing.  Once the search has been completed the application will render the fetched information to the search page.  The user will be presented with a range of information including secret information to help get to the next levels.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Description
+---
+The project has been designed to use an API fetch to recieve and render user input information specific to the gaming title.  The user has the ability to make comments, delete comments and upload images/media to their profile.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- AS A USER I want to be able to log-in/sign up
+- AS A USER I want ro be able to search for a specific game title and be presented with everything related to my search
+- AS A USER I should be able to make posts and upload pictures/screenshots if necessary
+- AS A USER I want to be able to message other users if I have further questions
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Process
+---
+We used Mongo DB to setup the server for our app, Express.js as the middleware and React JS as the template rendering engine for this app.
 
-### `npm run build`
+## Screenshots
+---
+Home Page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Home Screenshot]()
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Profile Page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Home Screenshot]()
 
-### `npm run eject`
+## Sources
+---
+- [MONGOOSE JS](https://mongoosejs.com/docs/middleware.html)
+- [CLOUDINARY](https://cloudinary.com/documentation/image_video_and_file_upload)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Technologies
+---
+- REACT JS
+- BOOTSTRAP
+- MONGO DB
+- JAVA SCRIPT
+- CSS
+- API Fetch
+- CLOUDINARY
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
+---
+Cloudinary
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+See deployed site here: 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+See repository here: https://github.com/dylanjacobb/game-secrets
 
-## Learn More
+## Credits
+---
+- Course Instructor:  Anthony  |  TA: Max
+- Class Activities & Mini Project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Brandon Carter: [@Brandnn07](https://github.com/Brandnn07)
 
-### Code Splitting
+John Kim: [@mother426](https://github.com/mother426)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Dylan Jacob: [@dylanjacobb](https://github.com/dylanjacobb)
 
-### Analyzing the Bundle Size
+Taylor Weeks: [@tweeks07](https://github.com/tweeks07)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
