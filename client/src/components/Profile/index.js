@@ -4,7 +4,7 @@ import './style.css';
 
 function Profile() {
   const localUser = JSON.parse(sessionStorage.getItem("user"));
-  console.log(localUser.name)
+  // console.log(localUser.name)
   const [userName, setuserName] = useState({
     name: localUser.name,
   })

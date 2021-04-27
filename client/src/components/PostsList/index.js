@@ -13,11 +13,11 @@ function PostsList() {
       .then((results) => {
         setPosts(results.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => (err));
   }, []);
 
   const localUser = JSON.parse(sessionStorage.getItem("user"));
-  console.log(localUser.name)
+  // console.log(localUser.name)
   const [userName, setuserName] = useState({
     name: localUser.name,
   })

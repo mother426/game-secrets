@@ -17,7 +17,7 @@ function YourPosts(e) {
       usersPosts.push(posts[i]);
     }
   }
-  console.log(usersPosts);
+  // console.log(usersPosts);
 
   useEffect(() => {
     api
@@ -30,9 +30,9 @@ function YourPosts(e) {
 
   const handleDelete = async (id) => {
     try {
-      console.log(id);
+      // console.log(id);
       const post = await api.deletePost(id);
-      console.log(post);
+      // console.log(post);
     } catch (err) {
       console.log(err);
     }

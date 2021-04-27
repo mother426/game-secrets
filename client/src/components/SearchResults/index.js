@@ -5,7 +5,7 @@ import { Image } from "cloudinary-react";
 import "./style.css";
 
 function SearchResults(props) {
-  console.log(props.searchResults);
+  // console.log(props.searchResults);
   return (
     <>
       {props.searchResults.map((post) => (
