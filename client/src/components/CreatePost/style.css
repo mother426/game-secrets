@@ -1,7 +1,9 @@
 .create-secret-title {
     margin-top: 100px;
+    font-size: 30px;
 }
 
 .create-secret-main {
-    margin: 50px;
+    margin-left: 50px ;
+    max-width: 400px;
 }
