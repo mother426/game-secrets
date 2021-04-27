@@ -22,7 +22,6 @@ const FullPost = props => {
     // Get this working!^
   }
 
-  
   return (
     <>
       <div key={post._id} className="card commented-main-card">
