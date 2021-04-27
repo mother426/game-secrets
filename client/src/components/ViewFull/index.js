@@ -3,9 +3,9 @@ import "./style.css";
 
 function ViewFull() {
     return (
-        <span className="view-comments-btn"role="button">
+        <button className="view-comments-btn btn btn-outline-danger" role="button">
         View Comments
-      </span>
+      </button>
     )
 }
 

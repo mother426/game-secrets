@@ -1,11 +1,42 @@
 .post-list-cards {
     padding: 0;
     border: none;
-    box-shadow: 0 0 10px rgb(230, 230, 230);
-    transition: .6s;
+    box-shadow: 1px 1px 7px rgb(70, 70, 70);
+    transition: .5s;
     position: relative;
 }
 
 .post-list-cards:hover {
     transform: scale(1.001, 1.01);
 }
+
+.card {
+    max-width: 60%;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 50px;
+}
+
+img {
+    max-width: 175px;
+    max-height: 300px;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+  }
+
+  .bg-image-feed {
+      background-color: rgb(43, 43, 43);
+      border-top-left-radius: 100%;
+      background-size: cover;
+      background-image: url('../../assets/images/gaming-background.jpeg');
+  }
+
+  .home-title {
+      text-align: center;
+      padding-top: 150px;
+      margin-bottom: 50px;
+      font-size: 30px;
+  }
