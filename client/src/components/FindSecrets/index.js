@@ -35,7 +35,7 @@ function FindSecrets(props) {
                 className="form-control mr-sm-2"
                 type="text"
                 name="search"
-                placeholder="Search for a Game"
+                placeholder="Search for a Post"
                 aria-label="Search"
                 onChange={handleChange}
                 value={form.search}

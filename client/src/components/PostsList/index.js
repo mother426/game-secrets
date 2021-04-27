@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ViewFull from "../ViewFull";
-import SavePost from "../SavePost";
 import api from "../../utils/api";
 import { Image } from "cloudinary-react";
 import "./style.css";
@@ -17,20 +16,18 @@ function PostsList() {
       .catch((err) => console.log(err));
   }, []);
 
-  // maybe a .push()
-  const handleSave = () => {
-    if ("clicked") {
-      console.log("bruh moment");
-    }
-  };
-
   return (
     <>
+    <div className="bg-image-feed">
+      <h4 className="home-title">
+        Secrets Feed
+      </h4>
       {posts.map((post) => (
         <div key={post._id} className="card post-list-cards">
-          <div className="card-horizontal">
+          <div className="card-horizontal card-whole">
+
             <div className="img-square-wrapper">
-                <Image cloudName="dlq3ftm0n" publicId={post.image} />
+              <Image cloudName="dlq3ftm0n" publicId={post.image} />
             </div>
             <div className="card-body">
               <h4 className="card-title">{post.title}</h4>
@@ -41,14 +38,14 @@ function PostsList() {
                   <ViewFull />
                 </div>
               </Link>
-              <div className="card-footer">
-                <small className="text-muted">{post.date}</small>
-              </div>
             </div>
-            <SavePost onClick={handleSave} />
+          </div>
+          <div style={{ backgroundColor: 'rgb(237, 242, 244)' }} className="card-footer">
+            <small className="text-muted">{post.date}</small>
           </div>
         </div>
       ))}
+      </div>
     </>
   );
 }

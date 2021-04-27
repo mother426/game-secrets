@@ -25,7 +25,7 @@ function SearchResults(props) {
               </Link>
             </div>
           </div>
-          <div className="card-footer">
+          <div style={{backgroundColor: 'rgb(237, 242, 244)'}} className="card-footer">
             <small className="text-muted">{post.date}</small>
           </div>
         </div>

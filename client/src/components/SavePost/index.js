@@ -1,12 +1,12 @@
-import React from "react";
-import './style.css'
+// import React from "react";
+// import './style.css'
 
-function SavePost(props) {
-  return (
-    <span className="save-btn" {...props} role="button">
-      ☆
-    </span>
-  );
-}
+// function SavePost(props) {
+//   return (
+//     <span className="save-btn" {...props} role="button">
+//       ☆
+//     </span>
+//   );
+// }
 
-export default SavePost;
+// export default SavePost;
