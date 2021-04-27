@@ -7,7 +7,7 @@ const AuthRoute = ({ user, component: Component, ...rest }) => {
       {...rest}
       render={props=> {
         const newProps = {...props, ...rest};
-        console.log('NEW PROPS: ',  newProps);
+        // console.log('NEW PROPS: ',  newProps);
         return user.email ? (
           <Component {...newProps} user={user} />
         ) : (

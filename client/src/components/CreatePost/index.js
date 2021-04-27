@@ -17,7 +17,7 @@ function CreatePost({ user, changeUser }) {
   const createPostHandler = async (e) => {
     e.preventDefault();
     const image = await uploadImage();
-    console.log(image)
+    // console.log(image)
     // reference file URL in the data object being sent to createPost?
     const data = {
       author: authorRef.current.value,
@@ -26,12 +26,12 @@ function CreatePost({ user, changeUser }) {
       date: dateRef.current.value,
       image: image.data,
     };
-    console.log(data);
+    // console.log(data);
     await api.createPost(data);
   };
 
   const uploadImage = async () => {
-    console.log(imageSelected);
+    // console.log(imageSelected);
     const formData = new FormData();
     formData.append("file", imageSelected);
     formData.append("upload_preset", process.env.UPLOAD_PRESET);
