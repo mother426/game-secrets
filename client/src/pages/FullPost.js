@@ -3,22 +3,25 @@ import { Image } from "cloudinary-react";
 import api from '../utils/api';
 
 const FullPost = props => {
-  const [post, setPost] = useState([]);
+  const [post, setPost] = useState({});
+  const [count, setCount] = useState(0);
   const commentRef = useRef();
 
   useEffect(() => {
     api.getPost(props.match.params.id)
       .then(res => setPost(res.data))
       .catch(err => console.log(err))
-  }, []);
+  }, [count]);
   // const commentsArray = post.comments
   const commentHandler = async (e) => {
     e.preventDefault();
     const data = {
-      content: commentRef.current.value
+      content: commentRef.current.value,
+      id: post._id
     }
     console.log(data)
     await api.createComment(data)
+    .then(()=>setCount(curr=>curr += 1))
     // Get this working!^
   }
 
@@ -55,9 +58,9 @@ const FullPost = props => {
           Submit
           </button>
       </form>
-      {post.comments && post.comments.map((post,i) => (
-      <div key={i} className="card">
-        {post}
+      {post.comments && post.comments.map((commentz,i) => (
+      <div key={commentz._id} className="card">
+        {commentz.content}
       </div>
      ))}
     </>
