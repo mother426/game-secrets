@@ -16,8 +16,8 @@ function Profile() {
       </div>
       {/* create a secret card */}
       {/* TODO: create a secret */}
-      <div className="card create-secret-card">
-        <div className="card-body">
+      <div style={{borderRadius: 50}} className=" card create-secret-card">
+        <div style={{borderRadius: 30}} className="card-body">
           <h5 className="card-title">Create a Secret</h5>
           <p className="card-text">Click the button below to create a Secret!</p>
           <Link
@@ -25,10 +25,10 @@ function Profile() {
               className={
                 window.location.pathname === "/createpost" || window.location.pathname === "/createpost"
                   ? "nav-link active"
-                  : "nav-link"
+                  : "nav-link btn-danger btn create-post-btn"
               }
             >
-              Create a post!
+              Create
             </Link>
         </div>
       </div>

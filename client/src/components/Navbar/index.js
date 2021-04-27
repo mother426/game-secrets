@@ -38,7 +38,7 @@ function Navbar(props) {
               to="/profile"
               className={window.location.pathname === "/profile"
                 ? "nav-link active"
-                : "nav-link"
+                : "nav-link "
               }
             >
               Profile
@@ -47,7 +47,7 @@ function Navbar(props) {
           <li className="nav-item">
             <Link
               to="/logout"
-              className="nav-link active nav-link"
+              className="nav-link active navbar-right nav-link"
               onClick={handleLogout}
             >
               Logout
