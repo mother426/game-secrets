@@ -69,6 +69,8 @@ module.exports = {
             const result = await db.Comment.create({
                 content: req.body.content
             })
+            console.log(req.body)
+            // findoneandupdate a post where the _id matches THIS posts _id
             db.Post.findOneAndUpdate({_id: req.body._id}, {$push:{comments: result._id}}, {new: true})
         } catch (err) {
             console.log(err);
