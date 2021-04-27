@@ -1,7 +1,28 @@
+@media only screen and (max-width: 600px) {
+    .search-area {
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        float: none;
+        margin: 0 auto;
+    }
+    .search-post-form {
+        max-width: 50%;
+    }
+    .search-btn {
+        width: 500px;
+    }
+  }
+
 .search-area {
     justify-content: center;
     text-align: center;  
     text-shadow: 2px 2px 4px #e1e1e1;
+    padding-top: 300px;
+}
+
+.search-secret-title {
+    font-size: 40px;
 }
 
 .background-search {
@@ -9,7 +30,7 @@
     background-position: center;
     background-size: cover;
     margin-bottom: 100px;
-    padding: 300px;
+    overflow: hidden;
     height: 800px;
     background-image: url("https://images.unsplash.com/photo-1490991268239-cceeedd63e15?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2288&q=80");
 }

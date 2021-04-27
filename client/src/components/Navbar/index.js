@@ -15,8 +15,8 @@ function Navbar(props) {
   }
 
   return (
-    <nav style={{position: 'fixed', top: 0, padding: 10, zIndex: 9}} className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="/">
+    <nav style={{ padding: 15 }} className="sticky-top navbar navbar-expand-lg navbar-light bg-light">
+      <Link className="navbar-brand navbar-main-title" to="/">
         Game Secrets
       </Link>
       <div>

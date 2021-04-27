@@ -1,16 +1,42 @@
+@media only screen and (max-width: 600px) {
+    .welcome-user {
+        display: none;
+    }
+    .create-secret-card {
+        max-width: 90%;
+        width: 500px;
+        
+    }
+  }
+
 .welcome-user {
-    margin-left: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 84%;
     margin-bottom: 35px;
-    margin-top: 100px;
-    font-size: 17px;
+    margin-top: 50px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    font-size: 22px;
+    background-color: rgb(205, 59, 66);
+    box-shadow: 2px 2px 4px rgb(157, 157, 157);
+    color: white;
+}
+
+.create-post-title {
+    font-size: 22px;
 }
 
 .create-secret-card {
-    max-width: 30%;
-    align-items: center;
+    width: 500px;
     text-align: center;
-    align-content: center;
-    box-shadow: 2px 2px 4px rgb(225, 225, 225);
+    margin-left: 50px;
+    box-shadow: 2px 2px 4px rgb(205, 205, 205);
+    padding: 20px;
+    margin: 0 auto;
+    float: none;
     margin-bottom: 100px;
 }
 

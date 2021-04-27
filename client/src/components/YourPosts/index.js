@@ -42,13 +42,13 @@ function YourPosts(e) {
     <>
       <h4 className="your-secrets-title">Your Secrets</h4>
       {usersPosts.map((post) => (
-        <div data-user={post._id} key={post._id} className="card post-card your-post-cards">
+        <div data-user={post._id} key={post._id} className="post-card your-post-cards">
           <div className="card-horizontal">
             <div className="img-square-wrapper">
-              <Image cloudName="dlq3ftm0n" publicId={post.image} />
+              <Image className="your-post-images" cloudName="dlq3ftm0n" publicId={post.image} />
             </div>
             <div className="card-body">
-              <h4 className="card-title">{post.title}</h4>
+              <h4 className="card-title your-post-title">{post.title}</h4>
               <h6>posted by: {post.author}</h6>
               <p className="card-text">{post.body}</p>
               <Link to={"/post/" + post._id}>

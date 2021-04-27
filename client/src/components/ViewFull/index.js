@@ -3,7 +3,7 @@ import "./style.css";
 
 function ViewFull() {
     return (
-        <button className="view-comments-btn btn btn-outline-danger" role="button">
+        <button className="view-comments-btn btn btn-outline-danger">
         View Comments
       </button>
     )

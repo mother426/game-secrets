@@ -44,13 +44,13 @@ function CreatePost({ user, changeUser }) {
     <div className="create-secret-main">
       <h1 className="create-secret-title">Create a Game Secret</h1>
       <form onSubmit= {createPostHandler}>
-        <div>
+        <div className="post-by">
           <p>Post by:</p>
           <input disabled="disabled" ref={authorRef} value={localUser.name} />
         </div>
-        <p>At:</p>
+        <p className="at-time">At:</p>
         <input disabled="disabled" ref={dateRef} value={currentDate} />
-        <div className="form-group">
+        <div className="form-group post-submit-title">
           <label htmlFor="exampleInputEmail1">Title of post</label>
           <input
             className="form-control"
@@ -68,11 +68,9 @@ function CreatePost({ user, changeUser }) {
             ref={bodyRef}
           ></textarea>
         </div>
-        <div className="input-group mb-3">
-          <div className="input-group-prepend">
-            <span className="input-group-text">Upload</span>
+          <div className="upload-image-submit">
+            Upload an Image:
           </div>
-        </div>
         <div className="custom-file">
           <input
             type="file"
@@ -80,8 +78,13 @@ function CreatePost({ user, changeUser }) {
               setImageSelected(e.target.files[0]);
             }}
           />
+        {/* <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text">Upload</span>
+          </div>
+        </div> */}
           {/* <label className="custom-file-label" htmlFor="inputGroupFile01">Choose file</label> */}
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-danger create-secret-submit">
             Submit
           </button>
           {/* </Redirect> */}

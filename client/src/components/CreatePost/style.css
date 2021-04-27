@@ -1,10 +1,35 @@
-.create-secret-title {
-    margin-top: 100px;
-    font-size: 30px;
-}
+@media only screen and (max-width: 600px) {
+    .create-secret-title {
+        text-align: center;
+    }
+    .create-secret-main {
+        margin-right: 50px;
+        
+    }
+  }
 
 .create-secret-main {
+    margin-top: 50px;
     margin-left: 50px ;
     max-width: 400px;
-    
+}
+
+.create-secret-submit {
+    margin-top: 15px;
+}
+
+.post-by {
+    margin-top: 25px;
+}
+
+.at-time {
+    margin-top: 15px;
+}
+
+.post-submit-title {
+    margin-top: 15px;
+}
+
+.upload-image-submit {
+    margin-bottom: 10px;
 }

@@ -1,0 +1,9 @@
+.footer-text {
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 50px;
+}
+
+.footer-text a {
+    color: rgb(204, 68, 74);
+}
