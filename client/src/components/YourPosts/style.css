@@ -1,14 +1,30 @@
+@media only screen and (max-width: 600px) {
+    .your-post-cards {
+        min-width:90%;
+    }
+    .your-post-images {
+        display: none;
+    }
+    .more-details {
+        padding-left: 30px;
+    }
+  }
+
 .your-secrets-title {
     text-align: center;
     margin: 30px;
+    font-size: 40px;
 }
 
 .your-post-cards {
     padding: 0;
-    border: none;
     box-shadow: 0 0 20px rgb(213, 213, 213);
     transition: .6s;
-    position: relative;
+    width: 60%;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    border-radius: 20px;
 }
 
 .your-post-cards:hover {

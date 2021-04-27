@@ -1,4 +1,8 @@
-.login-card {
+.signup-card {
     padding: 25px;
     margin: 30px;
+    margin-top: 100px;
+    width: 450px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 7px rgb(203, 203, 203);
 }

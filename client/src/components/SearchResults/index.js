@@ -9,10 +9,10 @@ function SearchResults(props) {
   return (
     <>
       {props.searchResults.map((post) => (
-        <div key={post._id} className="card results-card">
+        <div key={post._id} className="results-card">
           <div className="card-horizontal">
             <div className="img-square-wrapper">
-              <Image cloudName="dlq3ftm0n" publicId={post.image} />
+              <Image className="post-search-image" cloudName="dlq3ftm0n" publicId={post.image} />
             </div>
             <div className="card-body">
               <h4 className="card-title">{post.title}</h4>

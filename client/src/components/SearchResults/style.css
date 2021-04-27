@@ -1,6 +1,22 @@
+@media only screen and (max-width: 600px) {
+    .results-card {
+        min-width: 90%;
+    }
+    .post-search-image {
+        display: none;
+    }
+  }
+
 .results-card {
     box-shadow: 0 0 20px rgb(213, 213, 213);
     transition: .6s;
+    width: 60%;
+    padding: 0;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    background-color: white;
 }
 
 .results-card:hover {

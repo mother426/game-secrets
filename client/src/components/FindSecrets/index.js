@@ -28,9 +28,9 @@ function FindSecrets(props) {
     <>
       <div className="background-search">
         <div className="search-area">
-          <h4 className="search-title">Search for a Game Secret Here</h4>
+          <h4 className="search-title search-secret-title">Search for a Game Secret Here</h4>
           <div className="row justify-content-center">
-            <form className="form-inline">
+            <form className="form-inline search-post-form">
               <input
                 className="form-control mr-sm-2"
                 type="text"

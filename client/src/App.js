@@ -9,6 +9,7 @@ import FullPost from './pages/FullPost'
 import "./App.css";
 import AuthRoute from "./components/AuthRoute";
 import CreatePost from "./pages/CreatePost";
+import Footer from "./components/Footer";
 // pass the user object into the state for the entire app
 function App() {
   const [user, setUser] = useState({});
@@ -29,6 +30,7 @@ function App() {
   // }
 
   return (
+    <>
     <Router>
       <Navbar changeUser={changeUser} />
       <Switch>
@@ -53,6 +55,8 @@ function App() {
         <AuthRoute exact path="/" user={user} component={HomePage} />
       </Switch>
     </Router>
+    <Footer />
+    </>
   );
 }
 
