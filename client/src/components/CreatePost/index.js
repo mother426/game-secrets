@@ -59,7 +59,7 @@ function CreatePost({ user, changeUser }) {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="exampleFormControlTextarea1">Player Question:</label>
+          <label htmlFor="exampleFormControlTextarea1">Post Content:</label>
           <textarea
             className="form-control"
             id="exampleFormControlTextarea1"
