@@ -3,7 +3,7 @@ import { Redirect } from "react-router";
 import api from "../../utils/api";
 import "./style.css";
 
-function Login({user, changeUser}) {
+function Login({ user, changeUser }) {
   const emailRef = useRef();
   const passwordRef = useRef();
 
@@ -21,39 +21,39 @@ function Login({user, changeUser}) {
   return (
 
     <>
-    {user.email && <Redirect to='/'/>}
-    <div style={{ marginTop: 100, marginRight: 100, marginLeft: 100 }} className="card login-card">
-      <form onSubmit={handleLogin}>
-        <h2>Login</h2>
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email address</label>
-          <input
-            type="email"
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
-            ref={emailRef}
-          />
-          <small id="emailHelp" className="form-text text-muted">
-            We'll never share your email with anyone else.
+      {user.email && <Redirect to='/' />}
+      <div className="col-md-3 border border-4 login-card">
+        <form onSubmit={handleLogin}>
+          <h2>Login</h2>
+          <div className="form-group">
+            <label htmlFor="exampleInputEmail1">Email address</label>
+            <input
+              type="email"
+              className="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              ref={emailRef}
+            />
+            <small id="emailHelp" className="form-text text-muted">
+              We'll never share your email with anyone else.
           </small>
-        </div>
-        <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            id="exampleInputPassword1"
-            placeholder="Password"
-            ref={passwordRef}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
+          </div>
+          <div className="form-group">
+            <label htmlFor="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              className="form-control"
+              id="exampleInputPassword1"
+              placeholder="Password"
+              ref={passwordRef}
+            />
+          </div>
+          <button type="submit" className="btn btn-danger">
+            Submit
         </button>
-      </form>
-    </div>
+        </form>
+      </div>
     </>
   );
 }
