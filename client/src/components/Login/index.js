@@ -14,7 +14,7 @@ function Login({ user, changeUser }) {
       password: passwordRef.current.value
     }
     const isLoggedIn = await api.login(data);
-    console.log(isLoggedIn.data);
+    // console.log(isLoggedIn.data);
     changeUser(isLoggedIn.data);
   };
 

@@ -6,11 +6,11 @@ import './style.css';
 function Navbar(props) {
   const handleLogout = async (e) => {
     e.preventDefault();
-    console.log("loggingout: ")
+    // console.log("loggingout: ")
     await api.logout();
-    console.log("removing from localstorage")
+    // console.log("removing from localstorage")
     sessionStorage.clear();
-    console.log("setting user")
+    // console.log("setting user")
     props.changeUser({});
   }
 

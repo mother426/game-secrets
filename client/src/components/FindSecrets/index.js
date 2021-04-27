@@ -16,7 +16,7 @@ function FindSecrets(props) {
     e.preventDefault();
     try {
       const { data } = await api.searchByTitle({ title: form.search });
-      console.log("data from server: ", data);
+      // console.log("data from server: ", data);
       setSearchResults(data);
     } catch (err) {
       console.log(err);

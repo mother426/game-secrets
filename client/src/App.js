@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     const localUser = JSON.parse(sessionStorage.getItem("user"));
-    console.log("localUser: ", localUser);
+    // console.log("localUser: ", localUser);
     if (localUser) setUser(localUser);
   }, []);
 

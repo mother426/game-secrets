@@ -11,7 +11,7 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     findById: function(req, res) {
-        db.Post.findById(req.params.id)
+        db.Post.findById(req.params.id).populate("comments")
             .then(postModel => res.json(postModel))
             .catch(err => res.status(422).json(err));
     },
@@ -69,9 +69,10 @@ module.exports = {
             const result = await db.Comment.create({
                 content: req.body.content
             })
-            console.log(req.body)
+            console.log(req.body.id, result)
             // findoneandupdate a post where the _id matches THIS posts _id
-            db.Post.findOneAndUpdate({_id: req.body._id}, {$push:{comments: result._id}}, {new: true})
+            const newComment = await db.Post.findOneAndUpdate({_id: req.body.id}, {$push:{comments: result._id}}, {new: true})
+            res.json(newComment);
         } catch (err) {
             console.log(err);
             res.sendStatus(500).json(err);
