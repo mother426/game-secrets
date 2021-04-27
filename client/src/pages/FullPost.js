@@ -23,7 +23,6 @@ const FullPost = props => {
   }
 
 
-  
   return (
     <>
       <div key={post._id} className="card commented-main-card">
